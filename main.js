@@ -1,6 +1,7 @@
 (function () {
   "use strict";
 
+  var colors = ['#ff8e8e', '#ff8ec6', '#ff8eff', '#c68eff', '#8e8eff', '#8ec6ff', ' #8effff', '#8effff', '#8effc6', '#8eff8e', '#c6ff8e', '#ffff8e', '#ffc68e'];
 
   var app = new Vue({
     el: '#vue-main',
@@ -28,6 +29,10 @@
         var a = this.fib(this.n);
         var b = this.fib(this.n-1);
         return (b/(a+b) * 100);
+      },
+
+      color: function () {
+        return colors[this.n%colors.length];
       },
     }
   });
