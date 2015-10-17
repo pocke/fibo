@@ -29,13 +29,9 @@
     return (b/(a+b) * 100);
   };
 
-
-
-  var app = new Vue({
-    el: '#vue-main',
-    data: {
-      n: 3,
-    },
+  Vue.component('fibo-a', {
+    template: '#a-template',
+    props: ['n'],
     methods: {
       fib: Fibo,
       colorn: ColourN,
@@ -44,11 +40,22 @@
       a: aFunc,
       b: bFunc,
 
-      color: function () {
-        return this.colorn(this.n);
-      },
+      color: function () { return this.colorn(this.n); },
+    },
+    ready: function () {
+      console.log(this);
     }
   });
 
-  console.log(app);
+  var app = new Vue({
+    el: '#vue-main',
+    data: {
+      n: 3,
+    },
+    ready: function () {
+      console.log(this);
+    }
+  });
+
+
 })();

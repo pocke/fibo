@@ -27,32 +27,35 @@
   <div id="vue-main">
     <input type="number" min="2" v-model="n">
     <br>
-    <div style="background-color: #0000ff; width: 70%; position: relative;">
-      <div style="background-color: {{color}}; width: {{a}}%; position: absolute;">
-        <div class="square"></div>
-      </div>
-
-      <div v-if="n==2" style="width: {{b}}%; left: {{a}}%; position: absolute;">
-        <div class="square" style="background-color: {{colorn(n-1)}}"></div>
-        <div class="square" style="background-color: {{colorn(n-2)}}"></div>
-      </div>
-
-      <div v-if="n>2" style="width: {{b}}%; left: {{a}}%; position: absolute;">
-        <div class="square" style="background-color: {{colorn(n-1)}}"></div>
-
-        <div v-if="n==3">
-          <div style="background-color: {{colorn(n-2)}}; width: 50%; padding-top: 50%;            position: absolute;"></div>
-          <div style="background-color: {{colorn(n-3)}}; width: 50%; padding-top: 50%; left: 50%; position: absolute;"></div>
-        </div>
-      </div>
-
-    </div>
+    <fibo-a n="{{n}}"></fibo-a>
   </div>
 </div>
 
 
+
+<script type="x-template" id="a-template">
+<div style="background-color: #0000ff; width: 70%; position: relative;">
+  <div style="background-color: {{color}}; width: {{a}}%; position: absolute;">
+    <div class="square"></div>
+  </div>
+
+  <div v-if="n==2" style="width: {{b}}%; left: {{a}}%; position: absolute;">
+    <div class="square" style="background-color: {{colorn(n-1)}}"></div>
+    <div class="square" style="background-color: {{colorn(n-2)}}"></div>
+  </div>
+
+  <div v-if="n>2" style="width: {{b}}%; left: {{a}}%; position: absolute;">
+    <div class="square" style="background-color: {{colorn(n-1)}}"></div>
+
+    <div v-if="n==3">
+      <div style="background-color: {{colorn(n-2)}}; width: 50%; padding-top: 50%;            position: absolute;"></div>
+      <div style="background-color: {{colorn(n-3)}}; width: 50%; padding-top: 50%; left: 50%; position: absolute;"></div>
+    </div>
+  </div>
+</div>
+</script>
+
 <script src="node_modules/vue/dist/vue.min.js"></script>
 <script src="main.js"></script>
-
 
 </body>
