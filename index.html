@@ -37,14 +37,11 @@
         <div class="square" style="background-color: {{colorn(n-2)}}"></div>
       </div>
 
-      <div v-if="n!=2">
-        <div style="background-color: #00fff; width: {{b}}%; left: {{a}}%;"> </div>
+      <div v-if="n!=2" style="width: {{b}}%; left: {{a}}%; position: absolute;">
+        <div class="square" style="background-color: {{colorn(n-1)}}"></div>
+        <div style="background-color: {{colorn(n-2)}}; width: 50%; padding-top: 50%;            position: absolute;"></div>
+        <div style="background-color: {{colorn(n-3)}}; width: 50%; padding-top: 50%; left: 50%; position: absolute;"></div>
       </div>
-    </div>
-
-    <div>
-      a: {{a}}
-      b: {{b}}
     </div>
   </div>
 </div>
