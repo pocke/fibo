@@ -17,6 +17,10 @@
           return self.memo_fib[n];
         }();
       },
+
+      colorn: function (n) {
+        return colors[n%colors.length];
+      },
     },
     computed: {
       a: function () {
@@ -32,7 +36,7 @@
       },
 
       color: function () {
-        return colors[this.n%colors.length];
+        return this.colorn(this.n);
       },
     }
   });
