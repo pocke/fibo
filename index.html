@@ -9,6 +9,7 @@
 
 <!-- TODO:  -->
 <!-- <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="main.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,7 +23,28 @@
 
 <div class="container">
   <h1>Fibo</h1>
+
+  <div id="vue-main">
+    <input type="number" min="2" v-model="n">
+    <br>
+    <div style="background-color: #0000ff; width: 1000px;">
+      <div style="background-color: #ff0000; width: {{a}}%;">
+        <div class="square"></div>
+      </div>
+      <div style="background-color: #00ff00; width: {{b}}%; left: {{a}}%;">
+      </div>
+    </div>
+
+    <div>
+      a: {{a}}
+      b: {{b}}
+    </div>
+  </div>
 </div>
+
+
+<script src="node_modules/vue/dist/vue.min.js"> </script>
+<script src="main.js"> </script>
 
 
 </body>
