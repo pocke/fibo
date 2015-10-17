@@ -7,11 +7,13 @@
     return colors[n%colors.length];
   }
 
+  var memo_fib = [1, 1];
+
   function Fibo(n) {
     var self = this;
-    return self.memo_fib[n] || function () {
-      self.memo_fib[n] = self.fib(n-1) + self.fib(n-2);  
-      return self.memo_fib[n];
+    return memo_fib[n] || function () {
+      memo_fib[n] = self.fib(n-1) + self.fib(n-2);  
+      return memo_fib[n];
     }();
   }
 
@@ -33,7 +35,6 @@
     el: '#vue-main',
     data: {
       n: 3,
-      memo_fib: [1, 1],
     },
     methods: {
       fib: Fibo,
