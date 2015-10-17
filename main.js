@@ -25,7 +25,6 @@
     },
     computed: {
       a: function () {
-        console.log(this);
         var a = this.fib(this.n);
         var b = this.fib(this.n-1);
         return (a/(a+b) * 100);
