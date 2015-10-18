@@ -85,22 +85,24 @@
 
 
 <script type="x-template" id="c-template">
-<div v-if="n==1">
-  <div style="width: 50%; position: absolute; background-color: #ffff00">
-    <div class="square" style="background-color: {{colorn(n)}};"></div>
-  </div>
-  <div style="width: 50%; left: 50%; position: absolute; background-color: #ffff00">
-    <div class="square" style="background-color: {{colorn(n-1)}};"></div>
-  </div>
-</div>
-
-<div v-if="n>1">
-  <div style="width: {{a}}%; left: {{100-a}}%; background-color: {{colorn(n)}}; position: absolute;">
-    <div class="square"></div>
+<div style="transform: rotate(180deg); transform-origin: center center; padding-bottom: {{a}}%;">
+  <div v-if="n==1">
+    <div style="width: 50%; position: absolute; background-color: #ffff00">
+      <div class="square" style="background-color: {{colorn(n)}};"></div>
+    </div>
+    <div style="width: 50%; left: 50%; position: absolute; background-color: #ffff00">
+      <div class="square" style="background-color: {{colorn(n-1)}};"></div>
+    </div>
   </div>
 
-  <div style="width: {{100-a}}%; position: absolute;">
-    <fibo-d n="{{n-1}}"></fibo-d>
+  <div v-if="n>1">
+    <div style="width: {{a}}%; left: {{100-a}}%; background-color: {{colorn(n)}}; position: absolute;">
+      <div class="square"></div>
+    </div>
+
+    <div style="width: {{100-a}}%; position: absolute;">
+      <fibo-d n="{{n-1}}"></fibo-d>
+    </div>
   </div>
 </div>
 </script>
